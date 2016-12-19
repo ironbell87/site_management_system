@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" src="javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="javascripts/ui_basics.js"></script>
+    <script type="text/javascript" src="javascripts/ui_message.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/main.css">
+    <title>Message</title>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div id="header_space">
+        <h3>현장관리시스템(site management system, SMS)</h3>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="contents_space">
+        <div id="task_space">
+        </div>
+        <div id="message_space">
+
+            <div id="div_title"></div><br />
+
+            <div id="div_snd">
+                <label for="inp_snd">발신자 : </label>
+                <input id="inp_snd" type="text" value="원청_101동_기사_아무개" disabled />
+            </div>
+
+            <div id="div_rcv">
+                <label for="lst_psn_rcv">수신자 : </label>
+                <select id="lst_psn_rcv">
+                    <option value="psn_1" selected>협력업체_철근팀_홍길동</option>
+                    <option value="psn_2">협력업체_거푸집팀_아무개</option>
+                </select>
+                <select id="lst_org_rcv">
+                    <option value="org_1" selected>협력업체_철근팀</option>
+                    <option value="org_2">협력업체_거푸집팀</option>
+                    <option value="org_3">협력업체_타설팀</option>
+                </select>
+            </div>
+
+            <div id="div_msg">
+                <label for="txt_msg">메세지 : </label>
+                <input id="txt_msg" type="text" value="철근에 대한 긴급처리 요망" />
+            </div>
+
+            <div id="div_checklist">
+                <label for="chk_checklist">체크리스트 : </label><br />
+                <div id="chk_checklist">
+                    <input type="checkbox" id="ckl_1" class="class_checklist"> 직경<br />
+                    <input type="checkbox" id="ckl_2" class="class_checklist"> 간격<br />
+                    <input type="checkbox" id="ckl_3" class="class_checklist"> 길이<br />
+                    <input type="checkbox" id="ckl_4" class="class_checklist"> 굽힘위치<br />
+                </div>
+            </div>
+
+            <!--<div id="div_attach">
+                <label for="img_atch_dwg">첨부 : </label><br />
+                <img id="img_atch_pic" src="images/pic.png" onload="this.width*=0.8;this.onload=null;">
+                <img id="img_atch_dwg" src="images/dwg.png" onload="this.width*=0.8;this.onload=null;">
+            </div>-->
+            <div id="div_attach">
+                <input id="btn_pic" type="button" value="사진 첨부">
+                <input id="btn_dwg" type="button" value="도면 첨부" style="margin-left: 200px"><br />
+                <img id="img_atch_pic" src="images/pic.png" onload="this.width*=0.8;this.onload=null;" hidden>
+                <img id="img_atch_dwg" src="images/dwg.png" onload="this.width*=0.8;this.onload=null;" hidden>
+            </div>
+
+            <br />
+            <input id="btn_ok" type="button" value="확인">
+            <input id="btn_response" type="button" value="응답">
+            <input id="btn_cancel" type="button" value="취소">
+
+        </div>
+        <div id="option_space">
+            <select id="opt_rcv">
+                <option value="single">1명</option>
+                <option value="multi">여러명</option>
+            </select><br /><br />
+            <select id="opt_body_type">
+                <option value="message">메세지</option>
+                <option value="checklist">체크리스트</option>
+            </select><br /><br />
+            <select id="opt_attach">
+                <option value="no_attach">첨부 없음</option>
+                <option value="yes_attach">첨부</option>
+            </select><br /><br />
+            <select id="opt_dir">
+                <option value="one_way">1방향</option>
+                <option value="two_way">2방향</option>
+            </select><br /><br />
+            <select id="opt_target">
+                <option value="rebar">철근</option>
+                <option value="form">거푸집</option>
+                <option value="conc">콘크리트</option>
+                <option value="worker">작업자</option>
+                <!--<optgroup label="철근">
+                <option value="rebar_confirm">거푸집</option>
+                <option value="rebar_confirm">콘크리트</option>
+                <option value="worker">작업자</option>
+            </optgroup>
+            <optgroup label="거푸집">
+            </optgroup>
+            <optgroup label="콘크리트">
+            </optgroup>
+            <optgroup label="작업자">
+            </optgroup>-->
+            </select><br />
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" src="javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="javascripts/CollapsibleLists.js"></script>
+    <script type="text/javascript" src="javascripts/ui_basics.js"></script>
+    <script type="text/javascript" src="javascripts/00.work.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/main.css">
+    <title>Work Dialog</title>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div id="header_space">
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="contents_space">
+        <div id="part_tree_space">
+            <ul id="ul_part_tree" class="tree_view collapsible_list">
+                <li id="part_0">공사 부위</li>
+            </ul><br />
+            <input type="file" id="show_file_open_dlg" hidden/>
+            <input type="button" id="btn_part_BH" class="btn_import" value="BH에서 가져오기" /><br /><br />
+            <input type="button" id="btn_part_MSP" class="btn_import" value="MSP에서 가져오기" />
+        </div>
+        <div id="process_tree_space">
+            <ul id="ul_process_tree" class="tree_view collapsible_list">
+                <li id="process_0">공정 (회사 WBS)</li>
+            </ul><br />
+            <input type="button" id="btn_process_WBS" class="btn_import" value="WBS에서 가져오기"/><br /><br />
+            <input type="button" id="btn_process_MSP" class="btn_import" value="MSP에서 가져오기"/>
+        </div>
+        <div id="work_dlg_space">
+            <img id="img_part" src="images\bh.png" onload="this.width*=1.5/*2.4*/;this.onload=null;"><br /><br />
+            <img id="img_work" src="images\msp.png" onload="this.width*=0.577/*0.93*/;this.onload=null;" hidden><br /><br />
+            <input type="button" id="btn_add_work" value="작업 추가" />
+        </div>
+    </div>
+
+
+    <nav class="cntx_menu">
+        <ul>
+            <li id="part_menu" class="menu_terminal">공사부위 추가</li>
+            <li id="process_menu" class="menu_terminal">공정 추가</li>
+        </ul>
+    </nav>
+
+
+</body>
+</html>

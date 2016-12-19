@@ -1,0 +1,379 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" src="javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="javascripts/CollapsibleLists.js"></script>
+    <script type="text/javascript" src="javascripts/ui_basics.js"></script>
+    <script type="text/javascript" src="javascripts/01.message.js"></script>
+    <script type="text/javascript" src="javascripts/ui_message.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/main.css">
+    <title>Message</title>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div id="header_space">
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="contents_space">
+        <div id="div_hrz_menu">
+            <ul>
+                <li><span class="active">메세지</span></li>
+                <li><span>인력</span></li>
+                <li><span>자재</span></li>
+                <li><span>장비</span></li>
+                <li><span>물량</span></li>
+                <li><span>예산</span></li>
+            </ul>
+        </div>
+        <!--<div id="div_task_tree">
+            <ul id="ul_task_tree" class="tree_view collapsible_list">
+                <li id="task_0">
+                    작업
+                    <ul class="collapsible_list">
+                        <li id="task_1">개시지시</li>
+                        <li id="task_2">진도검토</li>
+                        <li id="task_3">결과확인</li>
+                        <li id="task_4" class="last_child">완료확인</li>
+                    </ul>
+                </li>
+            </ul><br />
+        </div>-->
+        <div id="tree_space">
+            <ul id="ul_tree" class="tree_view collapsible_list">
+                <li id="tree_0">메세지
+                    <ul class="collapsible_list">
+                    </ul>
+                </li>
+            </ul><br />
+            <input type="button" id="btn_send_message" class="btn_import" value="메세지 보내기" />
+        </div>
+        <div id="work_space">
+            <div id="div_total">
+                <ul class="tree_view collapsible_list">
+                    <li>전체
+                        <ul class="collapsible_list">
+                            <!--<li>지하 2층 철근배근 확인</li>
+                            <li>지하 2층 거푸집 확인</li>
+                            <li>지하 2층 콘크리트 타설 확인</li>
+                            <li>지하 1층 철근배근 확인</li>
+                            <li>지하 1층 거푸집 확인</li>
+                            <li>지하 1층 콘크리트 타설 확인</li>
+                            <li>1층 철근배근 확인</li>
+                            <li>1층 거푸집 확인</li>
+                            <li>1층 콘크리트 타설 확인</li>
+                            <li>2층 철근배근 확인</li>
+                            <li>2층 거푸집 확인</li>
+                            <li>2층 콘크리트 타설 확인</li>
+                            <li>3층 철근배근 확인</li>
+                            <li>3층 거푸집 확인</li>
+                            <li>3층 콘크리트 타설 확인</li>
+                            <li>4층 철근배근 확인</li>
+                            <li>4층 거푸집 확인</li>
+                            <li class="last_child">4층 콘크리트 타설 확인</li>-->
+                        </ul>
+                    </li>
+                </ul><br />
+            </div>
+			<div id="div_delivery" hidden>
+                <ul class="tree_view collapsible_list">
+                    <li>수신
+                        <ul class="collapsible_list">
+                            <li>지하 2층 철근배근 확인</li>
+                            <li>지하 2층 거푸집 확인</li>
+                            <li>지하 2층 콘크리트 타설 확인</li>
+                            <li>지하 1층 철근배근 확인</li>
+                            <li>지하 1층 거푸집 확인</li>
+                            <li>지하 1층 콘크리트 타설 확인</li>
+                            <li>1층 철근배근 확인</li>
+                            <li>1층 거푸집 확인</li>
+                            <li class="last_child">1층 콘크리트 타설 확인</li>
+                        </ul>
+                    </li>
+                </ul><br />
+                <ul class="tree_view collapsible_list">
+                    <li>발신
+                        <ul class="collapsible_list">
+                            <li>2층 철근배근 확인</li>
+                            <li>2층 거푸집 확인</li>
+                            <li>2층 콘크리트 타설 확인</li>
+                            <li>3층 철근배근 확인</li>
+                            <li>3층 거푸집 확인</li>
+                            <li>3층 콘크리트 타설 확인</li>
+                            <li>4층 철근배근 확인</li>
+                            <li>4층 거푸집 확인</li>
+                            <li class="last_child">4층 콘크리트 타설 확인</li>
+                        </ul>
+                    </li>
+                </ul><br />
+            </div>
+			<div id="div_complete" hidden>
+                <ul class="tree_view collapsible_list">
+                    <li>즉시 실행중
+                        <ul class="collapsible_list">
+                            <li>1층 철근배근 확인</li>
+                            <li>1층 거푸집 확인</li>
+                            <li>1층 콘크리트 타설 확인</li>
+                            <li>2층 철근배근 확인</li>
+                            <li>2층 거푸집 확인</li>
+                            <li class="last_child">2층 콘크리트 타설 확인</li>
+                        </ul>
+                    </li>
+                </ul><br />
+                <ul class="tree_view collapsible_list">
+                    <li>보류 실행중
+                        <ul class="collapsible_list">
+                            <li>3층 철근배근 확인</li>
+                            <li>3층 거푸집 확인</li>
+                            <li>3층 콘크리트 타설 확인</li>
+                            <li>4층 철근배근 확인</li>
+                            <li>4층 거푸집 확인</li>
+                            <li class="last_child">4층 콘크리트 타설 확인</li>
+                        </ul>
+                    </li>
+                </ul><br />
+                <ul class="tree_view collapsible_list">
+                    <li>완료
+                        <ul class="collapsible_list">
+                            <li>지하 2층 철근배근 확인</li>
+                            <li>지하 2층 거푸집 확인</li>
+                            <li>지하 2층 콘크리트 타설 확인</li>
+                            <li>지하 1층 철근배근 확인</li>
+                            <li>지하 1층 거푸집 확인</li>
+                            <li class="last_child">지하 1층 콘크리트 타설 확인</li>
+                        </ul>
+                    </li>
+                </ul><br />
+            </div>
+            <div id="div_process" hidden>
+                <ul class="tree_view collapsible_list">
+                    <li>철근배근
+                        <ul class="collapsible_list">
+                            <li>지하 2층 철근배근 확인</li>
+                            <li>지하 2층 거푸집 확인</li>
+                            <li>지하 2층 콘크리트 타설 확인</li>
+                            <li>지하 1층 철근배근 확인</li>
+                            <li>지하 1층 거푸집 확인</li>
+                            <li class="last_child">지하 1층 콘크리트 타설 확인</li>
+                        </ul>
+                    </li>
+                </ul><br />
+                <ul class="tree_view collapsible_list">
+                    <li>거푸집
+                        <ul class="collapsible_list">
+                            <li>1층 철근배근 확인</li>
+                            <li>1층 거푸집 확인</li>
+                            <li>1층 콘크리트 타설 확인</li>
+                            <li>2층 철근배근 확인</li>
+                            <li>2층 거푸집 확인</li>
+                            <li class="last_child">2층 콘크리트 타설 확인</li>
+                        </ul>
+                    </li>
+                </ul><br />
+                <ul class="tree_view collapsible_list">
+                    <li>콘크리트 타설
+                        <ul class="collapsible_list">
+                            <li>3층 철근배근 확인</li>
+                            <li>3층 거푸집 확인</li>
+                            <li>3층 콘크리트 타설 확인</li>
+                            <li>4층 철근배근 확인</li>
+                            <li>4층 거푸집 확인</li>
+                            <li class="last_child">4층 콘크리트 타설 확인</li>
+                        </ul>
+                    </li>
+                </ul><br />
+            </div>
+            <div id="div_subcon" hidden>
+                <ul class="tree_view collapsible_list">
+                    <li>협력업체 0
+                        <ul class="collapsible_list">
+                            <li class="last_child">지하 1층 가설 확인</li>
+                        </ul>
+                    </li>
+                </ul><br />
+                <ul class="tree_view collapsible_list">
+                    <li>협력업체 1
+                        <ul class="collapsible_list">
+                            <li>1층 철근배근 확인</li>
+                            <li class="last_child">2층 철근배근 확인</li>
+                        </ul>
+                    </li>
+                </ul><br />
+                <ul class="tree_view collapsible_list">
+                    <li>협력업체 2
+                        <ul class="collapsible_list">
+                            <li>3층 철근배근 확인</li>
+                            <li class="last_child">4층 철근배근 확인</li>
+                        </ul>
+                    </li>
+                </ul><br />
+                <ul class="tree_view collapsible_list">
+                    <li>협력업체 3
+                        <ul class="collapsible_list">
+                            <li>지하 2층 거푸집 확인</li>
+                            <li class="last_child">지하 1층 거푸집 확인</li>
+                        </ul>
+                    </li>
+                </ul><br />
+                <ul class="tree_view collapsible_list">
+                    <li>협력업체 4
+                        <ul class="collapsible_list">
+                            <li>지하 2층 콘크리트 타설 확인</li>
+                            <li class="last_child">지하 1층 콘크리트 타설 확인</li>
+                        </ul>
+                    </li>
+                </ul><br />
+                <ul class="tree_view collapsible_list">
+                    <li>협력업체 5
+                        <ul class="collapsible_list">
+                            <li>지하 2층 조적 공사</li>
+                            <li class="last_child">지하 1층 조적 공사</li>
+                        </ul>
+                    </li>
+                </ul><br />
+                <ul class="tree_view collapsible_list">
+                    <li>협력업체 6
+                        <ul class="collapsible_list">
+                            <li>지하 2층 미장 공사</li>
+                            <li class="last_child">지하 1층 미장 공사</li>
+                        </ul>
+                    </li>
+                </ul><br />
+            </div>
+        </div>
+        <div id="bh_msp_space">
+            <img id="img_part" src="images\bh.png" onload="this.width*=1.5/*2.4*/;this.onload=null;"><br /><br />
+            <img id="img_work" src="images\msp.png" onload="this.width*=0.577/*0.93*/;this.onload=null;">
+        </div>
+    </div>
+
+
+
+    <!--modal dialog box-->
+    <div id="modal_bg_space">
+
+        <div id="modal_content">
+
+            <div class="modal_header">메세지<span id="spn_close">x</span></div>
+
+            <div id="task_space">
+                <select id="sel_task">
+                    <!--개시지시, 진도검토, 결과확인, 완료확인-->
+                    <option value="commence" selected>개시</option>
+                    <option value="progress">진도</option>
+                    <option value="result">결과</option>
+                    <option value="complete">환료</option>
+                </select><br />
+            </div>
+            <div id="message_space">
+
+                <div id="div_title"></div><br />
+
+                <div id="div_snd">
+                    <label for="inp_snd">발신자 : </label>
+                    <input id="inp_snd" type="text" value="원청_101동_기사" disabled />
+                    <input type="checkbox" id="alarm" class="alarm" value="alarm" checked> 알람설정
+                    <label for="inp_dead_line">마감시한 : </label>
+                    <input id="inp_dead_line" type="text" value="2016년 12월 10일" />
+                </div>
+
+                <div id="div_rcv">
+                    <label for="lst_rcv">수신자 : </label>
+                    <select id="lst_rcv">
+                        <!--<option value="opt_rcv_1" selected>철근_작업반장</option>
+                        <option value="opt_rcv_2">철근_작업자 3</option>
+                        <option value="opt_rcv_3">철근_작업자 4</option>-->
+                    </select>
+                    <label for="lst_ref">참조자 : </label>
+                    <select id="lst_ref">
+                        <option value="opt_ref_1" selected>협력업체_거푸집팀</option>
+                        <option value="opt_ref_2">협력업체_타설팀</option>
+                        <option value="opt_ref_3">현장소장</option>
+                    </select>
+                </div>
+
+                <div id="div_msg">
+                    <label for="txt_msg">메세지 : </label>
+                    <input id="txt_msg" type="text" value="철근에 대한 긴급처리 요망" />
+                </div>
+
+                <div id="div_checklist">
+                    <label for="chk_checklist">체크리스트 : </label><br />
+                    <div id="chk_checklist">
+                        <input type="checkbox" id="ckl_1" class="cls_checklist" value="직경"> 직경<br />
+                        <input type="checkbox" id="ckl_2" class="cls_checklist" value="간격"> 간격<br />
+                        <input type="checkbox" id="ckl_3" class="cls_checklist" value="길이"> 길이<br />
+                        <input type="checkbox" id="ckl_4" class="cls_checklist" value="굽힘위치"> 굽힘위치<br />
+                    </div>
+                </div>
+
+                <div id="div_attach">
+                    <input id="btn_pic" class="btn_attach" type="button" value="사진 첨부">
+                    <input id="btn_dwg" class="btn_attach" type="button" value="도면 첨부" style="margin-left: 200px"><br />
+                    <img id="img_atch_pic" src="images/pic.png" onload="this.width*=0.8;this.onload=null;" hidden>
+                    <img id="img_atch_dwg" src="images/dwg.png" onload="this.width*=0.8;this.onload=null;" hidden>
+                </div>
+
+                <br />
+                <div id="div_write">
+                    <input id="btn_send" class="btn_import" type="button" value="보내기">
+                    <input id="btn_cancel" class="btn_import" type="button" value="취소">
+                </div>
+                <div id="div_read">
+                    <input id="btn_exe_now" class="btn_import" type="button" value="즉시실행">
+                    <input id="btn_exe_later" class="btn_import" type="button" value="보류">
+                    <input id="btn_confirm" class="btn_import" type="button" value="확인">
+                </div>
+            </div>
+            <div id="option_space">
+                <select id="sel_ref">
+                    <option value="opt_no_ref">참조 없음</option>
+                    <option value="opt_yes_ref">참조 있음</option>
+                </select><br /><br />
+                <select id="sel_body_type">
+                    <option value="opt_message">메세지</option>
+                    <option value="opt_checklist">체크리스트</option>
+                </select><br /><br />
+                <select id="sel_attach">
+                    <option value="opt_no_attach">첨부 없음</option>
+                    <option value="opt_yes_attach">첨부</option>
+                </select><br /><br />
+                <select id="sel_status">
+                    <option value="opt_write">발신</option>
+                    <option value="opt_read">수신</option>
+                </select><br /><br />
+                <select id="sel_reply">
+                    <option value="opt_no_reply">응답없음</option>
+                    <option value="opt_yes_reply">응답필요</option>
+                </select><br /><br />
+                <select id="sel_target">
+                    <option value="opt_rebar">철근</option>
+                    <option value="opt_form">거푸집</option>
+                    <option value="opt_conc">콘크리트</option>
+                    <option value="opt_worker">작업자</option>
+                    <!--<optgroup label="철근">
+                    <option value="rebar_confirm">거푸집</option>
+                    <option value="rebar_confirm">콘크리트</option>
+                    <option value="worker">작업자</option>
+                    </optgroup>
+                    <optgroup label="거푸집">
+                    </optgroup>
+                    <optgroup label="콘크리트">
+                    </optgroup>
+                    <optgroup label="작업자">
+                    </optgroup>-->
+                </select><br /><br />
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>

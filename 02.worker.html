@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" src="javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="javascripts/CollapsibleLists.js"></script>
+    <script type="text/javascript" src="javascripts/ui_basics.js"></script>
+    <script type="text/javascript" src="javascripts/02.worker.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/main.css">
+    <title>Worker</title>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div id="header_space">
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="contents_space">
+        <div id="div_hrz_menu">
+            <ul>
+                <li><span>메세지</span></li>
+                <li><span class="active">인력</span></li>
+                <li><span>자재</span></li>
+                <li><span>장비</span></li>
+                <li><span>물량</span></li>
+                <li><span>예산</span></li>
+            </ul>
+        </div>
+        <div id="tree_space">
+            <ul id="ul_tree" class="tree_view collapsible_list">
+                <li id="tree_0">인력
+                    <ul class="collapsible_list">
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="work_space">
+            <div id="total_worker">
+                <ul class="tree_view collapsible_list">
+                    <li>전체
+                        <ul class="collapsible_list">
+                            <li>John Doe 0 : 협력업체 0 : 가설 : 출근 O</li>
+                            <li>철근_작업반장 : 철근협력업체 1 : 철근 배근 : 출근 O</li>
+                            <li>철근_작업자 2 : 철근협력업체 1 : 철근 배근 : 출근 X</li>
+                            <li>철근_작업자 3 : 철근협력업체 2 : 철근 배근 : 출근 O</li>
+                            <li>철근_작업자 4 : 철근협력업체 2 : 철근 배근 : 출근 O</li>
+                            <li>John Doe 5 : 협력업체 3 : 거푸집 설치 : 출근 O</li>
+                            <li>John Doe 6 : 협력업체 3 : 거푸집 설치 : 출근 X</li>
+                            <li>John Doe 7 : 협력업체 3 : 거푸집 설치 : 출근 O</li>
+                            <li>John Doe 8 : 협력업체 4 : 콘크리트 타설 : 출근 O</li>
+                            <li>John Doe 9 : 협력업체 4 : 콘크리트 타설 : 출근 O</li>
+                            <li>John Doe 10 : 협력업체 5 : 조적 공사 : 출근 X</li>
+                            <li>John Doe 11 : 협력업체 5 : 조적 공사 : 출근 X</li>
+                            <li>John Doe 12 : 협력업체 6 : 미장 공사 : 출근 X</li>
+                            <li class="last_child">John Doe 13 : 협력업체 6 : 미장 공사 : 출근 X</li>
+                        </ul>
+                    </li>
+                </ul><br />
+            </div>
+            <div id="temporary_worker" hidden>
+                <ul class="tree_view collapsible_list">
+                    <li>가설
+                        <ul class="collapsible_list">
+                            <li class="last_child">John Doe 0 : 협력업체 0 : 가설 : 출근 O</li>
+                        </ul>
+                    </li>
+                </ul><br />
+            </div>
+            <div id="RC_worker" hidden>
+                <ul class="tree_view collapsible_list">
+                    <li>철근콘크리트 공사
+                        <ul class="collapsible_list">
+                            <li>철근 작업반장 : 철근협력업체 1 : 철근 배근 : 출근 O</li>
+                            <li>철근 작업자 2 : 철근협력업체 1 : 철근 배근 : 출근 X</li>
+                            <li>철근 작업자 3 : 철근협력업체 2 : 철근 배근 : 출근 O</li>
+                            <li>철근 작업자 4 : 철근협력업체 2 : 철근 배근 : 출근 O</li>
+                            <li>John Doe 5 : 협력업체 3 : 거푸집 설치 : 출근 O</li>
+                            <li>John Doe 6 : 협력업체 3 : 거푸집 설치 : 출근 X</li>
+                            <li>John Doe 7 : 협력업체 3 : 거푸집 설치 : 출근 O</li>
+                            <li>John Doe 8 : 협력업체 4 : 콘크리트 타설 : 출근 O</li>
+                            <li class="last_child">John Doe 9 : 협력업체 4 : 콘크리트 타설 : 출근 O</li>
+                        </ul>
+                    </li>
+                </ul><br />
+            </div>
+            <div id="rebar_worker" hidden>
+                <ul class="tree_view collapsible_list">
+                    <li>철근배근
+                        <ul class="collapsible_list">
+                            <li>철근 작업반장 : 철근협력업체 1 : 철근 배근 : 출근 O</li>
+                            <li>철근 작업자 2 : 철근협력업체 1 : 철근 배근 : 출근 X</li>
+                            <li>철근 작업자 3 : 철근협력업체 2 : 철근 배근 : 출근 O</li>
+                            <li class="last_child">철근 작업자 4 : 철근협력업체 2 : 철근 배근 : 출근 O</li>
+                        </ul>
+                    </li>
+                </ul><br />
+            </div>
+            <div id="form_worker" hidden>
+                <ul class="tree_view collapsible_list">
+                    <li>거푸집
+                        <ul class="collapsible_list">
+                            <li>John Doe 5 : 협력업체 3 : 거푸집 설치 : 출근 O</li>
+                            <li>John Doe 6 : 협력업체 3 : 거푸집 설치 : 출근 X</li>
+                            <li class="last_child">John Doe 7 : 협력업체 3 : 거푸집 설치 : 출근 O</li>
+                        </ul>
+                    </li>
+                </ul><br />
+            </div>
+            <div id="conc_worker" hidden>
+                <ul class="tree_view collapsible_list">
+                    <li>콘크리트타설
+                        <ul class="collapsible_list">
+                            <li>John Doe 8 : 협력업체 4 : 콘크리트 타설 : 출근 O</li>
+                            <li class="last_child">John Doe 9 : 협력업체 4 : 콘크리트 타설 : 출근 O</li>
+                        </ul>
+                    </li>
+                </ul><br />
+            </div>
+            <div id="masonry_worker" hidden>
+                <ul class="tree_view collapsible_list">
+                    <li>조적공사
+                        <ul class="collapsible_list">
+                            <li>John Doe 10 : 협력업체 5 : 조적 공사 : 출근 X</li>
+                            <li class="last_child">John Doe 11 : 협력업체 5 : 조적 공사 : 출근 X</li>
+                        </ul>
+                    </li>
+                </ul><br />
+            </div>
+            <div id="interior_worker" hidden>
+                <ul class="tree_view collapsible_list">
+                    <li>미장공사
+                        <ul class="collapsible_list">
+                            <li>John Doe 12 : 협력업체 6 : 미장 공사 : 출근 X</li>
+                            <li class="last_child">John Doe 13 : 협력업체 6 : 미장 공사 : 출근 X</li>
+                        </ul>
+                    </li>
+                </ul><br />
+            </div>
+        </div>
+        <div id="bh_msp_space">
+            <img id="img_part" src="images\bh.png" onload="this.width*=1.5/*2.4*/;this.onload=null;"><br /><br />
+            <img id="img_work" src="images\msp.png" onload="this.width*=0.577/*0.93*/;this.onload=null;">
+        </div>
+        <!--<div class="task_space">
+            <select id="opt_task">
+                <option value="worker_confirm">작업자 확인</option>
+                <option value="rebar_install_confirm_request">철근 설치 확인 요청</option>
+                <option value="rebar_install_confirm">철근 설치 확인</option>
+                <option value="rebar_order">철근 주문</option>
+            </select><br />
+        </div>-->
+    </div>
+
+</body>
+</html>

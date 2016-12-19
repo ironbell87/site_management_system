@@ -1,0 +1,222 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <script type="text/javascript" src="javascripts/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="javascripts/CollapsibleLists.js"></script>
+    <script type="text/javascript" src="javascripts/ui_basics.js"></script>
+    <script type="text/javascript" src="javascripts/00.schedule.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/main.css">
+    <title>Schedule</title>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div id="header_space">
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="contents_space">
+        <div id="schedule_space">
+            <div id="sun_space" class="day_space">
+                <p class="month_date_day"></p>
+            </div>
+            <div id="mon_space" class="day_space">
+                <p class="month_date_day"></p><br />
+                <ul class="tree_view collapsible_list">
+                    <li>작업
+                        <ul class="collapsible_list">
+                            <li>완료
+                                <ul class="collapsible_list">
+                                    <li>1층 :::: A동공사</li>
+                                    <li class="last_child">1층 :::: B동공사</li>
+                                </ul>
+                            </li>
+                            <li class="last_child">진행중
+                                <ul class="collapsible_list">
+                                    <li class="last_child">1층 :::: C동공사</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul><br />
+                <ul class="tree_view collapsible_list">
+                    <li>메세지
+                        <ul class="collapsible_list">
+                            <li>완료
+                                <ul class="collapsible_list">
+                                    <li>1층 :::: 철근운반</li>
+                                    <li>1층 :::: 철근가공지시</li>
+                                    <li class="last_child">1층 :::: 가공철근운반지시</li>
+                                </ul>
+                            </li>
+                            <li>즉시실행
+                                <ul class="collapsible_list">
+                                    <li>1층 :::: 가공철근조립지시</li>
+                                    <li>1층 :::: 철근조립확인요청</li>
+                                    <li class="last_child">1층 :::: 철근조립수정지시</li>
+                                </ul>
+                            </li>
+                            <li class="last_child">보류
+                                <ul class="collapsible_list">
+                                    <li>1층 :::: 수정확인요청</li>
+                                    <li>1층 :::: 완료</li>
+                                    <li class="last_child">1층 :::: 철근주문</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul><br />
+                <ul class="tree_view collapsible_list">
+                    <li>자재
+                        <ul class="collapsible_list">
+                            <li>반입
+                                <ul class="collapsible_list">
+                                    <li>철근 :::: HD13 70tf</li>
+                                    <li>콘크리트 :::: C24 레미콘 10대 (100mm3)</li>
+                                    <li class="last_child">콘크리트 :::: C30 레미콘 5대 (50mm3)</li>
+                                </ul>
+                            </li>
+                            <li>사용
+                                <ul class="collapsible_list">
+                                    <li>철근 :::: HD10 100tf</li>
+                                    <li>콘크리트 :::: C24 레미콘 10대 (100mm3)</li>
+                                    <li class="last_child">콘크리트 :::: C30 레미콘 5대 (50mm3)</li>
+                                </ul>
+                            </li>
+                            <li class="last_child">주문
+                                <ul class="collapsible_list">
+                                    <li class="last_child">콘크리트 :::: C30 레미콘 3대 (30mm3)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="tue_space" class="day_space">
+                <p class="month_date_day"></p><br />
+                <ul class="tree_view collapsible_list">
+                    <li>작업
+                        <ul class="collapsible_list">
+                            <li>완료
+                                <ul class="collapsible_list">
+                                    <li class="last_child">1층 :::: C동공사</li>
+                                </ul>
+                            </li>
+                            <li class="last_child">진행중
+                                <ul class="collapsible_list">
+                                    <li>2층 :::: A동공사</li>
+                                    <li class="last_child">2층 :::: B동공사</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul><br />
+                <ul class="tree_view collapsible_list">
+                    <li>메세지
+                        <ul class="collapsible_list">
+                            <li>완료
+                                <ul class="collapsible_list">
+                                    <li>1층 :::: 가공철근조립지시</li>
+                                    <li>1층 :::: 철근조립확인요청</li>
+                                    <li class="last_child">1층 :::: 철근조립수정지시</li>
+                                </ul>
+                            </li>
+                            <li>즉시실행
+                                <ul class="collapsible_list">
+                                    <li>1층 :::: 수정확인요청</li>
+                                    <li>1층 :::: 완료</li>
+                                    <li class="last_child">1층 :::: 철근주문</li>
+                                </ul>
+                            </li>
+                            <li class="last_child">보류
+                                <ul class="collapsible_list">
+                                    <li>2층 :::: 철근운반</li>
+                                    <li>2층 :::: 철근가공지시</li>
+                                    <li class="last_child">2층 :::: 가공철근운반지시</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul><br />
+                <ul class="tree_view collapsible_list">
+                    <li>예산
+                        <ul class="collapsible_list">
+                            <li>집행
+                                <ul class="collapsible_list">
+                                    <li>철근구입 :::: 1,000,000원</li>
+                                    <li class="last_child">콘크리트 :::: 500,000원</li>
+                                </ul>
+                            </li>
+                            <li class="last_child">예정
+                                <ul class="collapsible_list">
+                                    <li>철근구입 :::: 500,000원</li>
+                                    <li class="last_child">콘크리트 :::: 700,000원</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="wed_space" class="day_space">
+                <p class="month_date_day"></p><br />
+                <ul class="tree_view collapsible_list">
+                    <li>작업
+                        <ul class="collapsible_list">
+                            <li>완료</li>
+                            <li id="cur_list" class="last_child">진행중</li>
+                        </ul>
+                    </li>
+                </ul><br />
+                <ul class="tree_view collapsible_list">
+                    <li>메세지
+                        <ul class="collapsible_list">
+                            <li>완료</li>
+                            <li>즉시실행</li>
+                            <li class="last_child">보류</li>
+                        </ul>
+                    </li>
+                </ul><br />
+                <ul class="tree_view collapsible_list">
+                    <li>예산
+                        <ul class="collapsible_list">
+                            <li>집행</li>
+                            <li class="last_child">예정</li>
+                        </ul>
+                    </li>
+                </ul><br />
+                <ul class="tree_view collapsible_list">
+                    <li>자재
+                        <ul class="collapsible_list">
+                            <li>반입</li>
+                            <li>사용</li>
+                            <li class="last_child">주문</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div id="thu_space" class="day_space">
+                <p class="month_date_day"></p><br />
+            </div>
+            <div id="fri_space" class="day_space">
+                <p class="month_date_day"></p><br />
+            </div>
+            <div id="sat_space" class="day_space">
+                <p class="month_date_day"></p><br />
+            </div>
+        </div>
+    </div>
+
+
+    <nav class="cntx_menu">
+        <ul>
+            <li id="menu_work_new" class="menu_terminal">작업 추가</li>
+            <li id="menu_work_copy" class="menu_terminal">작업 복사</li>
+        </ul>
+    </nav>
+
+
+</body>
+</html>
